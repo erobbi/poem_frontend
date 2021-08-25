@@ -61,6 +61,6 @@ h6 {
 }
 
 #sidebar {
-  position:relative;
-  display: flex;
+  position:fixed;
+  top: 55px;
 }
