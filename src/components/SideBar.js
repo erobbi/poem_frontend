@@ -1,9 +1,16 @@
 import SearchBar from "./SearchBar";
 import PoemContainer from "./PoemsContainer";
 
-function Sidebar({poemData}) {
+function Sidebar({poemData, setSinglePoem}) {
 
-  console.log(poemData)
+  function handleClick(e) {
+    const name = e.target.textContent
+    poemData.forEach(poem => {
+      if (poem.title === name) {
+        setSinglePoem(poem.id)
+      }
+    })
+  }
 
   return (
     <div id="side-bar">
