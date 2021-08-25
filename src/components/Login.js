@@ -22,12 +22,12 @@ function signFalse() {
                 <div className="ui button" onClick={signFalse}>Log-in</div>
             </div>
         </div>
-            <div class="ui form">
-                <div class="field">
+            <div className="ui form">
+                <div className="field">
                     <label>{isSign ? "Sign Up" : "Log-in"}</label>
                     <input type="text" placeholder="Username" maxLength="20"></input>
                 </div>
-            <div class="ui submit button">Submit</div>
+            <div className="ui submit button">Submit</div>
         </div>
     </div>
         
