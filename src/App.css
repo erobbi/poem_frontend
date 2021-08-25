@@ -40,3 +40,15 @@
 #new-poem {
   padding-top: 25px;
 }
+
+#username {
+  width: 600px;
+}
+
+#login {
+  padding-top: 50px;
+}
+
+h6 {
+  font-size: 50px;;
+}

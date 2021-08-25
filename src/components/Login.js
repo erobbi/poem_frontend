@@ -3,31 +3,32 @@ import { useState } from 'react';
 
 const Login = () => {
 
-const [isSign, setSign] = useState(false);
+const [user, setUser] = useState("");
 
-function signTrue() {
-    setSign(true)
-}
+    function handleClick() {
+        fetch('http://localhost:9292/users', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: `${user}`
+            })
+        })
+    }
+        
 
-function signFalse() {
-    setSign(false)
-}
     return (
     <div>
-        <div className="ui menu">
-            <div className="item">
-                <div className="ui button" onClick={signTrue}>Sign up</div>
-            </div>
-            <div className="item">
-                <div className="ui button" onClick={signFalse}>Log-in</div>
-            </div>
-        </div>
-            <div className="ui form">
+        <h6>
+            WELCOME TO *SITE NAME*
+        </h6>
+            <div id="login" className="ui form">
                 <div className="field">
-                    <label>{isSign ? "Sign Up" : "Log-in"}</label>
-                    <input type="text" placeholder="Username" maxLength="20"></input>
+                    <label>Please enter Username</label>
+                    <input id="username" type="text" placeholder="Username" maxLength="20" onChange={(e) => setUser(e.target.value)} required/>
                 </div>
-            <div className="ui submit button">Submit</div>
+            <div onClick={handleClick}className="ui submit button">Submit</div>
         </div>
     </div>
         
