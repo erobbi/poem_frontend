@@ -22,7 +22,7 @@ const MainContainer = () => {
 
     useEffect(() =>{
         const fetchData = async () => {
-            const res = await fetch ('http://localhost:9293/authors')
+            const res = await fetch ('http://localhost:9292/authors')
             const newData = await res.json()
             setAuthorData(newData)
         }
@@ -34,7 +34,7 @@ const MainContainer = () => {
     console.log(authorData)
 
     return (
-        <div>
+        <div id="main-page">
             <PoemCard />
             <SideBar poemData = {poemData}/>
         </div>

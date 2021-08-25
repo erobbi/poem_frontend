@@ -6,7 +6,11 @@ import CommentSection from './CommentSection'
 import {useState, useEffect} from 'react'
 
 function PoemCard() {
+    const [newComment, setNewComment] = useState("");
 
+    function handleClick() {
+        console.log(newComment)
+    }
     
 
     return (
@@ -29,18 +33,24 @@ function PoemCard() {
                 <p>By William Badger</p>
             </div>
             <div className="ui black segment">
-                <p>Roses are red</p>
-                <p>Violets are pale</p>
-                <p>I can't for ruby</p>
-                <p>To be on a rail</p>
+                <p>{newComment}</p>
             </div>
                 <div className="ui black segment">
+                    <form>
                     <div className="ui form">
                         <div className="field">
-                            <input type="text" placeholder="Comment" maxLength="20"/>
+                            <label>Please type "/n" at the end of each line</label>
+                            <textarea 
+                            type="textarea" 
+                            placeholder="Comment"
+                            value={newComment}
+                            onChange={(e) => setNewComment(e.target.value)}
+                            required
+                            />
                         </div>
-                        <div className="ui submit button">Submit</div>
+                        <div className="ui submit button" type="submit" onClick={handleClick}>Submit</div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

@@ -6,9 +6,8 @@ function Sidebar({poemData}) {
   console.log(poemData)
 
   return (
-    <div>
+    <div id="side-bar">
       <SearchBar />
-      <div id="main-page">
         <div className="ui left fixed vertical menu">
           <div className="item">
             <div className="ui transparent icon input">
@@ -23,7 +22,6 @@ function Sidebar({poemData}) {
           <PoemContainer />
         </div>
       </div>
-    </div>
   );
 }
 
