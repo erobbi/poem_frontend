@@ -8,7 +8,7 @@ function Sidebar({poemData}) {
   return (
     <div id="side-bar">
       <SearchBar />
-        <div className="ui left fixed vertical menu">
+        <div id="sidebar" className="ui left fixed vertical menu">
           <div className="item">
             <div className="ui transparent icon input">
               <input type="text" placeholder="Search Poems..." />

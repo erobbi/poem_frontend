@@ -8,6 +8,7 @@ const MainContainer = () => {
 
     const [poemData, setPoemData] = useState([])
     const [authorData, setAuthorData] = useState([])
+    const [isSideBar, setSideBar] = useState(false);
 
 
     useEffect(() =>{
@@ -33,10 +34,19 @@ const MainContainer = () => {
     console.log(poemData)
     console.log(authorData)
 
+    function openSideBar() {
+        setSideBar(true)
+    }
+
+    function closeSideBar() {
+        setSideBar(false)
+    }
+
     return (
         <div id="main-page">
+            <button id="sidebar-button" class="ui icon button">{isSideBar ? <i class="x icon" onClick={closeSideBar}/> : <i class="search icon" onClick={openSideBar} />}</button>
+            {isSideBar ? <SideBar poemData = {poemData}/> : '' }
             <PoemCard />
-            <SideBar poemData = {poemData}/>
         </div>
     );
 }

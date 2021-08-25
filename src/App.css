@@ -52,3 +52,15 @@
 h6 {
   font-size: 50px;;
 }
+
+#sidebar-button {
+  position:relative;
+  display: flex;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+#sidebar {
+  position:relative;
+  display: flex;
+}
