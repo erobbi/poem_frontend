@@ -33,7 +33,7 @@ function PoemCard() {
                 <p>By William Badger</p>
             </div>
             <div className="ui black segment">
-                <p>{newComment}</p>
+                <p></p>
             </div>
                 <div className="ui black segment">
                     <form>
