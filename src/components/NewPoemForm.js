@@ -1,19 +1,40 @@
 import React from "react";
 import {useState, useEffect} from 'react'
+const axios = require("axios");
+
 
 function NewPoemForm() {
 
     const [newTitle, setNewTitle] = useState("");
     const [newContent, setNewContent] = useState("");
+    const [poemSubmitted, setPoemSubmitted] = useState(false)
 
     
 
     function handleClick() {
         let poemSubmit = {
+            author_id: 5,
             title: newTitle,
             poem: newContent
         }
         console.log(poemSubmit)
+    
+      axios.post(`/newpoem`, {
+        author_id: "5",
+        title: "a dumb poem",
+        content: "here is a poem\nlook at me writing\nwow so many lines"
+      })
+      .then(function (res) {
+        if (res.data.error) {
+          alert(res.data.error);
+        } else {
+          console.log(res);
+          setPoemSubmitted(true);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     }
 
     return (
