@@ -18,11 +18,11 @@ function NewPoemForm() {
             poem: newContent
         }
         console.log(poemSubmit)
-    
-      axios.post(`/newpoem`, {
-        author_id: "5",
-        title: "a dumb poem",
-        content: "here is a poem\nlook at me writing\nwow so many lines"
+        
+      axios.post('http://localhost:9292/newpoem', {
+        author_id: 5,
+        title: newTitle,
+        content: newContent
       })
       .then(function (res) {
         if (res.data.error) {
