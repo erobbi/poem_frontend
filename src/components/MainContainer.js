@@ -12,7 +12,7 @@ const MainContainer = () => {
 
     useEffect(() =>{
         const fetchData = async () => {
-            const res = await fetch ('http://localhost:9293/poems')
+            const res = await fetch ('http://localhost:9292/poems')
             const newData = await res.json()
             setPoemData(newData)
         }
