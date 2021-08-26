@@ -64,10 +64,10 @@ const Poem = ({ selectPoem, authorData }) => {
                             <input type="text" placeholder="Comment" maxLength="20"/>
                         </div> */}
                             <div id="like-button" class="ui labeled button" tabindex="0">
-                                <div class="ui red button">
+                                <div class="ui gray button">
                                     <i onClick={handleClick} class="heart icon"></i> Like
                                 </div>
-                                <a class="ui basic red left pointing label">
+                                <a class="ui basic gray left pointing label">
                                 {poemLikes}
                                 </a>
                                 </div>
