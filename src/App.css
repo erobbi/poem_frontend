@@ -54,7 +54,7 @@ h6 {
 }
 
 #sidebar-button {
-  position:relative;
+  position:fixed;
   display: flex;
   margin-top: 15px;
   margin-left: 15px;
@@ -63,4 +63,23 @@ h6 {
 #sidebar {
   position:fixed;
   top: 55px;
+}
+
+#poem-title {
+text-align: center;
+
+}
+
+#poem-author {
+text-align: center;
+}
+
+#poem-body {
+text-align: left;
+margin-left: 40%;
+}
+
+#nav-bar-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

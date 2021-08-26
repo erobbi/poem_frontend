@@ -30,26 +30,23 @@ const Poem = ({ selectPoem, authorData }) => {
 
 
     return (
-        <div id="poem-card" className="ui container">
-            <div id="nav-bar" className="ui three item menu">
-                <a className="item">New Poem</a>
-                <a className="item">View Comments</a>
-                <a className="item">Other?</a>
+        <div className="ui container">
+        <div className="ui segments">
+            <div className="ui segment">
+                <h1 id="poem-title">{individualPoem.title}</h1>
             </div>
         <div className="ui segments">
             <div className="ui segment">
-                <h1>{individualPoem.title}</h1>
-            </div>
-        <div className="ui segments">
-            <div className="ui segment">
-                <h2>By {authorName}</h2>
+                <h2 id="poem-author">By {authorName}</h2>
             </div>
         <div className="ui black segment">
+            <p id="poem-body">
                 {individualPoem.content ? individualPoem.content.split(",").map(e => {
                     e = e.replace(/["]+/g,'');
                     e = e.replace(/[\[\]']+/g,'');
                     return (e.length > 0) ? <p>{e}</p> : <br/>
                     }) : ""}
+                    </p>
         </div>
                 <div className="ui black segment">
                     <div className="ui form">
