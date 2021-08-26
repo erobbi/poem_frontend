@@ -5,6 +5,7 @@ const Poem = ({ selectPoem, authorData }) => {
 
     const [newComment, setNewComment] = useState("");
     const [individualPoem, setIndividualPoem] = useState([])
+    const [poemLikes, setPoemLikes] = useState(0);
 
     let authorName = ""
     authorData.forEach(author => {
@@ -21,6 +22,7 @@ const Poem = ({ selectPoem, authorData }) => {
             console.log(newData)
             if ( newData!=(null) ) {
                 setIndividualPoem(newData)
+                setPoemLikes(newData.likes)
             }
         }
         fetchData()
@@ -32,7 +34,12 @@ const Poem = ({ selectPoem, authorData }) => {
         console.log(`http://localhost:9292/poems/${selectPoem}/like/`)
                 fetch(`http://localhost:9292/poems/${selectPoem}/like/`)
                 .then(res => res.json())
-                .then(data => console.log(data))
+                .then(data => updateLikes(data))
+
+                function updateLikes(data) {
+                    console.log(data.likes)
+                    setPoemLikes(data.likes)
+                }
     }
 
 
@@ -65,7 +72,7 @@ const Poem = ({ selectPoem, authorData }) => {
                                     <i onClick={handleClick} class="heart icon"></i> Like
                                 </div>
                                 <a class="ui basic red left pointing label">
-                                0
+                                {poemLikes}
                                 </a>
                                 </div>
                         <div id="comment-submit" className="ui submit button">Submit</div>
