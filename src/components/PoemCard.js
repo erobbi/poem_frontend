@@ -4,8 +4,9 @@ import NewPoemForm from './NewPoemForm'
 import CommentForm from './CommentForm'
 import CommentSection from './CommentSection'
 import {useState, useEffect} from 'react'
+import EachLineRender from "./EachLineRender";
 
-function PoemCard({ singlePoem, authorData }) {
+function PoemCard({ selectPoem, authorData }) {
     const [individualPoem, setIndividualPoem] = useState([])
     // console.log(authorData)
     let authorName = ""
@@ -17,16 +18,20 @@ function PoemCard({ singlePoem, authorData }) {
 
     useEffect(() => {
         const fetchData = async () => {
-            console.log(`http://localhost:9292/poems/${singlePoem}`)
-            const res = await fetch(`http://localhost:9292/poems/${singlePoem}`)
+            console.log(`http://localhost:9292/poems/${selectPoem}`)
+            const res = await fetch(`http://localhost:9292/poems/${selectPoem}`)
             const newData = await res.json()
-            setIndividualPoem(newData)
+            console.log(newData)
+            if ( newData!=(null) ) {
+                setIndividualPoem(newData)
+            }
         }
         
         fetchData()
-    }, [])
+    }, [selectPoem])
 
     console.log(individualPoem.content)
+
 
     return (
         <div id="poem-card" className="ui container">
@@ -41,15 +46,22 @@ function PoemCard({ singlePoem, authorData }) {
             </div>
         <div className="ui segments">
             <div className="ui segment">
-                <h1>Poem</h1>
+                <h1>{individualPoem.title}</h1>
             </div>
         <div className="ui segments">
             <div className="ui segment">
-                <p>By {authorName}</p>
+                <h2>By {authorName}</h2>
             </div>
             <div className="ui black segment">
-                <p>{individualPoem.title}</p>
-                <p>{individualPoem.content}</p>
+                <p></p>
+                {individualPoem.content ? individualPoem.content.split(",").map(e => {
+                    e = e.replace(/["]+/g,'');
+                    e = e.replace(/[\[\]']+/g,'');
+                    console.log(e)
+                    return (e.length > 0) ? <p>{e}</p> : <br/>
+                    }) : ""    
+                }
+                {/* { individualPoem.content.forEach( (eachLine) => <p>{eachLine}</p> ) } */}
                 {/* <p>Violets are pale</p>
                 <p>I can't for ruby</p>
                 <p>To be on a rail</p> */}

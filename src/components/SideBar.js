@@ -1,20 +1,13 @@
 import SearchBar from "./SearchBar";
 import PoemContainer from "./PoemsContainer";
+import SideBarPoemItem from "./SideBarPoemItem";
 
-function Sidebar({poemData, setSinglePoem}) {
+function Sidebar({poemData, setSelectPoem}) {
 
-  function handleClick(e) {
-    const name = e.target.textContent
-    poemData.forEach(poem => {
-      if (poem.title === name) {
-        setSinglePoem(poem.id)
-      }
-    })
-  }
 
   return (
     <div id="side-bar">
-      <SearchBar />
+        <SearchBar />
         <div id="sidebar" className="ui left fixed vertical menu">
           <div className="item">
             <div className="ui transparent icon input">
@@ -24,7 +17,7 @@ function Sidebar({poemData, setSinglePoem}) {
           </div>
 
           {/* return list here */}
-          {poemData.map((eachPoem) => <a className="item">{eachPoem.title}</a>)}
+          {poemData.map((eachPoem) => <SideBarPoemItem setSelectPoem={setSelectPoem} eachPoem={eachPoem} />)}
           
           <PoemContainer />
         </div>
