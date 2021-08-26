@@ -4,7 +4,6 @@ import SideBarPoemItem from "./SideBarPoemItem";
 
 function Sidebar({poemData, setSelectPoem}) {
 
-
   return (
     <div id="side-bar">
         <SearchBar />
@@ -17,7 +16,7 @@ function Sidebar({poemData, setSelectPoem}) {
           </div>
 
           {/* return list here */}
-          {poemData.map((eachPoem) => <SideBarPoemItem setSelectPoem={setSelectPoem} eachPoem={eachPoem} />)}
+          {poemData.map((eachPoem) => <SideBarPoemItem key={eachPoem.id} setSelectPoem={setSelectPoem} eachPoem={eachPoem} />)}
           
           <PoemContainer />
         </div>
