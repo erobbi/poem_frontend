@@ -2,6 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react'
 import CommentSection from './CommentSection';
 
+
 const Poem = ({ selectPoem, authorData }) => {
 
     const [newComment, setNewComment] = useState("");
