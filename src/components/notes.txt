@@ -1,4 +1,0 @@
-To make sidebar work:
-
--setSinglePoem hook sets poem is by button blick
--a route on the server will receive the poem_id, match it with the server poem_id, and return that poem
