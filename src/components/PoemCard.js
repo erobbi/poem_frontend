@@ -26,7 +26,6 @@ function PoemCard({ selectPoem, authorData }) {
                 setIndividualPoem(newData)
             }
         }
-        
         fetchData()
     }, [selectPoem])
 
@@ -35,10 +34,6 @@ function PoemCard({ selectPoem, authorData }) {
 
     return (
         <div id="poem-card" className="ui container">
-            <LikeButton/>
-            <NewPoemForm/>
-            <CommentForm/>
-            <CommentSection/>
             <div id="nav-bar" className="ui three item menu">
                 <a className="item">New Poem</a>
                 <a className="item">View Comments</a>
@@ -57,14 +52,8 @@ function PoemCard({ selectPoem, authorData }) {
                 {individualPoem.content ? individualPoem.content.split(",").map(e => {
                     e = e.replace(/["]+/g,'');
                     e = e.replace(/[\[\]']+/g,'');
-                    console.log(e)
                     return (e.length > 0) ? <p>{e}</p> : <br/>
-                    }) : ""    
-                }
-                {/* { individualPoem.content.forEach( (eachLine) => <p>{eachLine}</p> ) } */}
-                {/* <p>Violets are pale</p>
-                <p>I can't for ruby</p>
-                <p>To be on a rail</p> */}
+                    }) : ""}
             </div>
                 <div className="ui black segment">
                     <div className="ui form">
@@ -76,8 +65,15 @@ function PoemCard({ selectPoem, authorData }) {
                 </div>
             </div>
         </div>
+        <LikeButton/>
+        <NewPoemForm/>
+        <CommentForm/>
+        <CommentSection/>
     </div>
     );
 }
 
 export default PoemCard;
+
+
+
