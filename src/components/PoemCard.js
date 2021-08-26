@@ -28,9 +28,6 @@ function PoemCard({ selectPoem, authorData }) {
             </div>
             </div>
             {!isNewPoem ? <PoemRender selectPoem={selectPoem} authorData={authorData}/> : <NewPoemForm/> }
-            <LikeButton/>
-            <CommentForm/>
-            <CommentSection/>
         </div>
     );
 }

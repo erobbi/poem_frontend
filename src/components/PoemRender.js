@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react'
+import CommentSection from './CommentSection';
 
 const Poem = ({ selectPoem, authorData }) => {
 
@@ -71,6 +72,9 @@ const Poem = ({ selectPoem, authorData }) => {
                                 </div>
                         <div id="comment-submit" className="ui submit button">Submit</div>
                     </div>
+                </div>
+                <div className="ui black segment">
+                    <CommentSection />
                 </div>
             </div>
         </div>
