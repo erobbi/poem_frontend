@@ -40,7 +40,6 @@ const MainContainer = () => {
         setSideBar(false)
     }
 
-    console.log('hi')
     return (
         <div id="main-page">
             <button id="sidebar-button" class="ui icon button">{isSideBar ? <i class="x icon" onClick={closeSideBar}/> : <i class="search icon" onClick={openSideBar} />}</button>
