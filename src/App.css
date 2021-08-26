@@ -38,7 +38,7 @@
 }
 
 #new-poem {
-  padding-top: 25px;
+  background-color: lightgray;
 }
 
 #username {
@@ -63,6 +63,7 @@ h6 {
 #sidebar {
   position:fixed;
   top: 55px;
+  background-color: lightgray;
 }
 
 #poem-title {
@@ -85,7 +86,7 @@ margin-left: 40%;
 }
 
 #like-button{
-  float:left;
+  
 }
 
 #comment-submit {
@@ -93,5 +94,19 @@ margin-left: 40%;
 }
 
 #main-page {
+  background-color: white;
+}
+
+#nav-bar {
+  background-color: lightgray;
+}
+#new-segments {
+  background-color: lightgray;
+}
+#render-segments {
+  background-color: lightgray;
+}
+
+#render-container {
   background-color: lightgray;
 }

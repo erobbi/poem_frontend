@@ -37,8 +37,8 @@ function NewPoemForm() {
 
     return (
         <div id="new-poem" class="ui container">
-            <div className="ui segments">
-            <div className="ui segment">
+            <div  className="ui segments">
+            <div id="new-segments" className="ui segment">
                 <h1>New Poem</h1>
             </div>
         <div className="ui segments">

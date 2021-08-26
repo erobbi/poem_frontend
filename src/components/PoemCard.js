@@ -22,9 +22,9 @@ function PoemCard({ selectPoem, authorData }) {
         <div> 
             <div id="nav-bar-container" class="ui container">
             <div id="nav-bar" className="ui three item menu">
-                {!isNewPoem ? <a onClick={renderPoemForm} className="item">New Poem</a> : <a onClick={renderPoem} className="item">Poems</a>}
-                <a className="item">View Comments</a>
-                <a className="item">Other?</a>
+                <a onClick={renderPoemForm} className="item">New Poem</a>
+                <a onClick={renderPoem} className="item">Poem</a>
+                <a className="item">Log-Out</a>
             </div>
             </div>
             {!isNewPoem ? <PoemRender selectPoem={selectPoem} authorData={authorData}/> : <NewPoemForm/> }

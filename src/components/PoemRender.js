@@ -40,9 +40,9 @@ const Poem = ({ selectPoem, authorData }) => {
 
 
     return (
-        <div className="ui container">
+        <div id="render-container" className="ui container">
         <div className="ui segments">
-            <div className="ui segment">
+            <div id="render-segments" className="ui segment">
                 <h1 id="poem-title">{individualPoem.title}</h1>
             </div>
         <div className="ui segments">
@@ -60,9 +60,9 @@ const Poem = ({ selectPoem, authorData }) => {
         </div>
                 <div className="ui black segment">
                     <div className="ui form">
-                        <div className="field">
+                        {/* <div className="field">
                             <input type="text" placeholder="Comment" maxLength="20"/>
-                        </div>
+                        </div> */}
                             <div id="like-button" class="ui labeled button" tabindex="0">
                                 <div class="ui red button">
                                     <i onClick={handleClick} class="heart icon"></i> Like
@@ -71,12 +71,12 @@ const Poem = ({ selectPoem, authorData }) => {
                                 {poemLikes}
                                 </a>
                                 </div>
-                        <div id="comment-submit" className="ui submit button">Submit</div>
+                        {/* <div id="comment-submit" className="ui submit button">Submit</div> */}
                     </div>
                 </div>
-                <div className="ui black segment">
+                {/* <div className="ui black segment">
                     <CommentSection />
-                </div>
+                </div> */}
             </div>
         </div>
         </div>
