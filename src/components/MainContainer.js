@@ -37,11 +37,6 @@ const MainContainer = () => {
         fetchData()
     }, [])
 
-
-    console.log(poemData)
-    console.log(authorData)
-    console.log({selectPoem})
-
     function openSideBar() {
         setSideBar(true)
     }

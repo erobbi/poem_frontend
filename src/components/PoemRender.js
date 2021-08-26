@@ -16,10 +16,8 @@ const Poem = ({ selectPoem, authorData }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            console.log(`http://localhost:9292/poems/${selectPoem}`)
             const res = await fetch(`http://localhost:9292/poems/${selectPoem}`)
             const newData = await res.json()
-            console.log(newData)
             if ( newData!=(null) ) {
                 setIndividualPoem(newData)
                 setPoemLikes(newData.likes)
@@ -28,16 +26,12 @@ const Poem = ({ selectPoem, authorData }) => {
         fetchData()
     }, [selectPoem])
 
-    console.log(individualPoem.content)
-
     function handleClick() {
-        console.log(`http://localhost:9292/poems/${selectPoem}/like/`)
-                fetch(`http://localhost:9292/poems/${selectPoem}/like/`)
+            fetch(`http://localhost:9292/poems/${selectPoem}/like/`)
                 .then(res => res.json())
                 .then(data => updateLikes(data))
 
                 function updateLikes(data) {
-                    console.log(data.likes)
                     setPoemLikes(data.likes)
                 }
     }

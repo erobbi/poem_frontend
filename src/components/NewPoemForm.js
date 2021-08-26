@@ -17,7 +17,6 @@ function NewPoemForm() {
             title: newTitle,
             poem: newContent
         }
-        console.log(poemSubmit)
         
       axios.post('http://localhost:9292/newpoem', {
         author_id: 5,
@@ -28,7 +27,6 @@ function NewPoemForm() {
         if (res.data.error) {
           alert(res.data.error);
         } else {
-          console.log(res);
           setPoemSubmitted(true);
         }
       })
