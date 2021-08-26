@@ -28,6 +28,13 @@ const Poem = ({ selectPoem, authorData }) => {
 
     console.log(individualPoem.content)
 
+    function handleClick() {
+        console.log(`http://localhost:9292/poems/${selectPoem}/like/`)
+                fetch(`http://localhost:9292/poems/${selectPoem}/like/`)
+                .then(res => res.json())
+                .then(data => console.log(data))
+    }
+
 
     return (
         <div className="ui container">
@@ -53,7 +60,15 @@ const Poem = ({ selectPoem, authorData }) => {
                         <div className="field">
                             <input type="text" placeholder="Comment" maxLength="20"/>
                         </div>
-                        <div className="ui submit button">Submit</div>
+                            <div id="like-button" class="ui labeled button" tabindex="0">
+                                <div class="ui red button">
+                                    <i onClick={handleClick} class="heart icon"></i> Like
+                                </div>
+                                <a class="ui basic red left pointing label">
+                                0
+                                </a>
+                                </div>
+                        <div id="comment-submit" className="ui submit button">Submit</div>
                     </div>
                 </div>
             </div>
