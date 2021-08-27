@@ -24,7 +24,7 @@ function PoemCard({ selectPoem, authorData }) {
   return (
     <div>
       <div id="nav-bar-container" class="ui container">
-        <h1>PO(tato)EMS</h1>
+        <h1>🥔 PO(tato)EMS 🥔</h1>
         <div id="nav-bar" className="ui three item menu">
           <a onClick={renderPoemForm} className="item">
             New Poem
@@ -40,6 +40,8 @@ function PoemCard({ selectPoem, authorData }) {
       ) : (
         <NewPoemForm authorData={authorData} />
       )}
+
+      <h3>Website by William Badger, Daniel Ezekiel, and Eli Robbins 🥔</h3>
     </div>
   );
 }
