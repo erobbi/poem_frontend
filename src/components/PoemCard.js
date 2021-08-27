@@ -22,7 +22,7 @@ function PoemCard({ selectPoem, authorData }) {
     return (
         <div> 
             <div id="nav-bar-container" class="ui container">
-            <h1>FLAT.POEM</h1>
+            <h1>PO(tato)EMS</h1>
             <div id="nav-bar" className="ui three item menu">
                 <a onClick={renderPoemForm} className="item">New Poem</a>
                 <a onClick={renderPoem} className="item">Poem</a>

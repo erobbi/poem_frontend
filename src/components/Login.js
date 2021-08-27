@@ -8,15 +8,6 @@ const Login = () => {
 const [user, setUser] = useState("");
 
     function handleClick() {
-        // fetch('http://localhost:9292/authors', {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify({
-        //         name: `${user}`
-        //     })
-        // })
 
     }
         
