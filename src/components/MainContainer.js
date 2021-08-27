@@ -16,7 +16,7 @@ const MainContainer = () => {
         const res = await fetch("http://localhost:9292/poems");
         const newData = await res.json();
         setPoemData(newData);
-        if (selectPoem == null) {
+        if (selectPoem.length == 0) {
           setSelectPoem(newData[0].id);
         }
       };

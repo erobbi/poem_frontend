@@ -2,10 +2,11 @@ import React from "react";
 import NewPoemForm from "./NewPoemForm";
 import PoemRender from "./PoemRender";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function PoemCard({ selectPoem, authorData }) {
   const [isNewPoem, setIsNewPoem] = useState(false);
+  let history = useHistory()
 
   function renderPoem() {
     setIsNewPoem(false);
@@ -13,6 +14,11 @@ function PoemCard({ selectPoem, authorData }) {
 
   function renderPoemForm() {
     setIsNewPoem(true);
+  }
+
+  function logout() {
+      console.log('helllo logout')
+      history.push('/')
   }
 
   return (
@@ -26,9 +32,7 @@ function PoemCard({ selectPoem, authorData }) {
           <a onClick={renderPoem} className="item">
             Poem
           </a>
-            <Link style={{ color: "black" }} to="/">
-                 <a className="item">Log-Out</a>
-            </Link>
+        <a className="item" onClick={logout}>Log-Out</a>
         </div>
       </div>
       {!isNewPoem ? (
