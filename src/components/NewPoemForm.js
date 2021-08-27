@@ -2,26 +2,32 @@ import React from "react";
 import { useState, useEffect } from "react";
 const axios = require("axios");
 
-function NewPoemForm({authorData}) {
+function NewPoemForm({ authorData }) {
   const [newUser, setNewUser] = useState("");
   const [newTitle, setNewTitle] = useState("");
   const [newContent, setNewContent] = useState("");
   const [poemSubmitted, setPoemSubmitted] = useState(false);
 
-  let userListArray = []
-  let userListObjects = []
-  function userList(){
-      authorData.map(eachAuthor => {
-          if (eachAuthor.is_user === true) {
-            userListArray.push(eachAuthor)
-            userListObjects.push(
-                <option value={eachAuthor.id} onClick={e => setNewUser(e.target.value)}>{eachAuthor.name} </option>)
-          }
-      })
-      // maybe add an alphabatizer sort here
-      // this should really be on backend
-    }
-    userList()
+  let userListArray = [];
+  let userListObjects = [];
+  function userList() {
+    authorData.map((eachAuthor) => {
+      if (eachAuthor.is_user === true) {
+        userListArray.push(eachAuthor);
+        userListObjects.push(
+          <option
+            value={eachAuthor.id}
+            onClick={(e) => setNewUser(e.target.value)}
+          >
+            {eachAuthor.name}{" "}
+          </option>
+        );
+      }
+    });
+    // maybe add an alphabatizer sort here
+    // this should really be on backend
+  }
+  userList();
 
   function handleClick() {
     let poemSubmit = {
@@ -47,9 +53,9 @@ function NewPoemForm({authorData}) {
         console.log(error);
       });
 
-      setNewContent("")
-      setNewTitle("")
-      setNewUser("")
+    setNewContent("");
+    setNewTitle("");
+    setNewUser("");
   }
 
   return (
@@ -60,13 +66,12 @@ function NewPoemForm({authorData}) {
         </div>
         <div className="ui segments">
           <div className="ui segment">
-
             <form>
               <div className="ui form">
-            <select class="ui search dropdown">
-              <option value="">User</option>
-              {userListObjects}
-            </select>
+                <select class="ui search dropdown">
+                  <option value="">User</option>
+                  {userListObjects}
+                </select>
                 <div className="field">
                   <input
                     type="text"

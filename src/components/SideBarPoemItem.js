@@ -1,18 +1,15 @@
-import React from 'react'
+import React from "react";
 
-
-function SideBarPoemItem({setSelectPoem, eachPoem}) {
-
-    function handleClick(e) {
-        setSelectPoem(e.target.id)
-        console.log(e.target.id)
-    }
-    return (
-            <a onClick={handleClick} id={eachPoem.id} className="item">{eachPoem.title}</a>
-    )
+function SideBarPoemItem({ setSelectPoem, eachPoem }) {
+  function handleClick(e) {
+    setSelectPoem(e.target.id);
+    console.log(e.target.id);
+  }
+  return (
+    <a onClick={handleClick} id={eachPoem.id} className="item">
+      {eachPoem.title}
+    </a>
+  );
 }
 
-export default SideBarPoemItem
-
-
-// 
+export default SideBarPoemItem;

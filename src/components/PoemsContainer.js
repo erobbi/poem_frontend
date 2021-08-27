@@ -1,9 +1,5 @@
 function PoemContainer() {
-    return (
-        <div>
-
-        </div>
-    )
+  return <div></div>;
 }
 
-export default PoemContainer
+export default PoemContainer;
