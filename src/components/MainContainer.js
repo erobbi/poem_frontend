@@ -18,7 +18,10 @@ const MainContainer = () => {
         setPoemData(newData);
         if (selectPoem.length == 0) {
           setSelectPoem(newData[0].id);
+          console.log('set selector triggered')
         }
+        console.log(selectPoem)
+        console.log(selectPoem.length)
       };
       fetchData();
 

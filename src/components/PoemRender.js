@@ -58,9 +58,9 @@ const Poem = ({ selectPoem, authorData }) => {
           </div>
           <div className="ui black segment">
             <div className="ui form">
-              <div id="like-button" class="ui labeled button" tabindex="0">
+              <div onClick={handleClick} id="like-button" class="ui labeled button" tabindex="0">
                 <div class="ui gray button">
-                  <i onClick={handleClick} class="heart icon"></i> Like
+                  <i class="heart icon"></i> Like
                 </div>
                 <a class="ui basic gray left pointing label">{poemLikes}</a>
               </div>
