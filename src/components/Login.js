@@ -10,7 +10,7 @@ const Login = () => {
 
   return (
     <div>
-      <h6>WELCOME TO PO(tato)EMS</h6>
+      <h6>Welcome To PO(tato)EMS</h6>
       <div id="login" className="ui form">
         <div className="field">
           <label>Please enter Username</label>
