@@ -24,7 +24,7 @@ const [user, setUser] = useState("");
     return (
     <div>
         <h6>
-            WELCOME TO FLAT.POEMS
+            WELCOME TO PO(tato)EMS
         </h6>
             <div id="login" className="ui form">
                 <div className="field">
@@ -34,7 +34,7 @@ const [user, setUser] = useState("");
                         type="text" 
                         placeholder="Username" 
                         maxLength="20" 
-                        onChange={(e) => setUser(e.target.value)} required/>
+                        onChange={(e) => setUser(e.target.value)}/>
                 </div>
             <div 
                 onClick={handleClick} 

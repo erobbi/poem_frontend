@@ -29,7 +29,7 @@ function PoemCard({ selectPoem, authorData }) {
                 <a className="item"><Link style={{ color: "black"}} to="/">Log-Out</Link></a>
             </div>
             </div>
-            {!isNewPoem ? <PoemRender selectPoem={selectPoem} authorData={authorData}/> : <NewPoemForm/> }
+            {!isNewPoem ? <PoemRender selectPoem={selectPoem} authorData={authorData}/> : <NewPoemForm authorData={authorData} /> }
         </div>
     );
 }

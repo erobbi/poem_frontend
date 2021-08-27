@@ -23,6 +23,7 @@ const Poem = ({ selectPoem, authorData }) => {
             if ( newData!=(null) ) {
                 setIndividualPoem(newData)
                 setPoemLikes(newData.likes)
+                console.log(newData)
             }
         }
         fetchData()
