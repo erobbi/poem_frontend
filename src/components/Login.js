@@ -22,9 +22,9 @@ const Login = () => {
             onChange={(e) => setUser(e.target.value)}
           />
         </div>
-        <div onClick={handleClick} className="ui submit button">
-          <Link to="/poem">Submit</Link>
-        </div>
+        <Link to="/poem">
+        <div onClick={handleClick} className="ui submit button">Submit</div>
+        </Link>
       </div>
     </div>
   );

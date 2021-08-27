@@ -26,11 +26,9 @@ function PoemCard({ selectPoem, authorData }) {
           <a onClick={renderPoem} className="item">
             Poem
           </a>
-          <a className="item">
             <Link style={{ color: "black" }} to="/">
-              Log-Out
+                 <a className="item">Log-Out</a>
             </Link>
-          </a>
         </div>
       </div>
       {!isNewPoem ? (
