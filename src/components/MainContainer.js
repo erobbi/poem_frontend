@@ -17,11 +17,18 @@ const MainContainer = () => {
             const res = await fetch ('http://localhost:9292/poems')
             const newData = await res.json()
             setPoemData(newData)
-            setSelectPoem(newData[0].id)
-            console.log(newData)
+            if (selectPoem == null){
+                setSelectPoem(newData[0].id)
+            }
         }
         fetchData()
-    }, [])
+        
+        const interval=setInterval(()=>{
+            fetchData()
+           },10000)
+           return()=>clearInterval(interval)}
+           // this will refetch poems every 10 seconds, to fetch any new poems that have been added to the DB
+    , [])
     
     useEffect(() =>{
         const fetchData = async () => {

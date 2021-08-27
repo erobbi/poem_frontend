@@ -46,6 +46,10 @@ function NewPoemForm({authorData}) {
       .catch(function (error) {
         console.log(error);
       });
+
+      setNewContent("")
+      setNewTitle("")
+      setNewUser("")
   }
 
   return (
